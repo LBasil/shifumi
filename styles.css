@@ -1,0 +1,53 @@
+body {
+    font-family: sans-serif;
+    background-image: url(images/meteor.svg);
+    color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 20px 0;
+}
+
+#choix-joueur, #resultat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.button-container {
+    display: flex;
+}
+
+.choix {
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.choix:hover {
+    background-color: #f0f0f0;
+}
+
+.img-container {
+    display: flex;
+}
+
+.choix-ordi, .choix-joueur-img {
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+}
+
+#resultat p {
+    margin: 10%;
+}
