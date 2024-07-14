@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shifumi</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <main>
-        <div class="container">
-            <h1 class="title">Cayoux - Papier - Trukikoupe</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shifumi</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <h1 class="title">CPT</h1>
+                <div id="choix-joueur">
+                    <h2 class="title">Faites votre choix:</h2>
+                    <div class="button-container">
+                        <button class="choix" id="pierre">Cayoux</button>
+                        <button class="choix" id="feuille">Papier</button>
+                        <button class="choix" id="ciseaux">Trukikoup</button>
+                    </div>
+                </div>
 
-            <div id="choix-joueur">
-                <h2 class="title">Faites votre choix:</h2>
-                <div class="button-container">
-                    <button class="choix" id="pierre">Cayoux</button>
-                    <button class="choix" id="feuille">Papier</button>
-                    <button class="choix" id="ciseaux">Trukikoupe</button>
+                <div id="resultat">
+                    <h2>Résultat:</h2>
+                    <div class="img-container">
+                        <img src="" alt="" id="choix-joueur-img" class="choix-joueur-img">
+                        <img src="" alt="" id="choix-ordi" class="choix-ordi">
+                    </div>
+                    <p id="verdict"></p>
                 </div>
             </div>
-
-            <div id="resultat">
-                <h2>Résultat:</h2>
-                <div class="img-container">
-                    <img src="" alt="" id="choix-joueur-img" class="choix-joueur-img">
-                    <img src="" alt="" id="choix-ordi" class="choix-ordi">
-                </div>
-                <p id="verdict"></p>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
-</body>
+        </main>
+        <script src="script.js"></script>
+    </body>
 </html>
