@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shifumi Deluxe</title>
-    <!-- Bootstrap CSS -->
+    <title>Shifumi Extrême</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-dark text-light d-flex flex-column justify-content-center align-items-center vh-100">
     <main class="container text-center">
-        <h1 class="display-4 mb-4">Shifumi Deluxe</h1>
+        <h1 class="display-3 mb-4 glitch">⚡ Shifumi Extrême ⚡</h1>
 
-        <div id="choix-joueur" class="mb-5">
+        <div id="scoreboard" class="d-flex justify-content-around mb-5">
+            <div>
+                <h3>Joueur</h3>
+                <p id="score-joueur" class="display-4">0</p>
+            </div>
+            <div>
+                <h3>Ordinateur</h3>
+                <p id="score-ordi" class="display-4">0</p>
+            </div>
+        </div>
+
+        <div id="choix-joueur" class="mb-4">
             <h2 class="h4">Faites votre choix:</h2>
             <div class="d-flex justify-content-center mt-3">
                 <button class="btn btn-outline-light mx-2 choix" id="pierre">🪨 Cayoux</button>
@@ -39,9 +49,10 @@
             </div>
             <p id="verdict" class="fs-4 mt-4"></p>
         </div>
+
+        <p id="message-special" class="mt-5 text-warning fs-5"></p>
     </main>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
