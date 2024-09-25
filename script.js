@@ -4,37 +4,40 @@ const choixOrdi = document.getElementById('choix-ordi');
 const verdict = document.getElementById('verdict');
 
 const CHOIX = {
-    PIERRE: 0,
-    FEUILLE: 1,
-    CISEAUX: 2
+    PIERRE: '🪨',
+    FEUILLE: '📄',
+    CISEAUX: '✂️'
 };
 
 choixJoueur.forEach(choix => {
     choix.addEventListener('click', () => {
-        const choixJ = choix.textContent; // Choix du joueur
-        const choixO = Math.floor(Math.random() * 3); // Choix aléatoire de l'ordinateur (0: pierre, 1: feuille, 2: ciseaux)
-        const choixJinInt = choixJ === 'Cayoux' ? CHOIX.PIERRE : choixJ === 'Papier' ? CHOIX.FEUILLE : CHOIX.CISEAUX;
+        const choixJ = choix.textContent; 
+        const choixO = Math.floor(Math.random() * 3);
+        const choixJinSymb = choixJ.includes('Cayoux') ? CHOIX.PIERRE : choixJ.includes('Papier') ? CHOIX.FEUILLE : CHOIX.CISEAUX;
 
-        choixOrdi.src = choixO === 0 ? 'images/stone.png' : choixO === 1 ? 'images/paper.png' : 'images/scissor.png'; // Affichage du choix de l'ordinateur
-        choixJoueurImg.src = choixJinInt === CHOIX.PIERRE ? 'images/stone.png' : choixJinInt === CHOIX.FEUILLE ? 'images/paper.png' : 'images/scissor.png'; // Affichage du choix du joueur
+        const choixOrdinateurSymb = Object.values(CHOIX)[choixO];
+        
+        choixJoueurImg.textContent = choixJinSymb;
+        choixOrdi.textContent = choixOrdinateurSymb;
 
-        const resultat = determineVainqueur(choixJinInt, choixO); // Déterminer le gagnant
+        const resultat = determineVainqueur(choixJinSymb, choixOrdinateurSymb); 
 
-        verdict.textContent = resultat === 0 ? 'Gagné !' : resultat === 1 ? 'Perdu !' : 'Égalité !'; // Affichage du verdict
+        verdict.innerHTML = resultat === 'win' 
+            ? '<span class="win">Gagné !</span>' 
+            : resultat === 'lose' 
+            ? '<span class="lose">Perdu !</span>' 
+            : '<span class="draw">Égalité !</span>';
     });
 });
 
 function determineVainqueur(cj, co) {
-    // Règles du jeu
-    if (cj === CHOIX.PIERRE && co === 2) {
-        return 0; // Joueur gagne
-    } else if (cj === CHOIX.FEUILLE && co === 0) {
-        return 0; // Joueur gagne
-    } else if (cj === CHOIX.CISEAUX && co === 1) {
-        return 0; // Joueur gagne
+    if ((cj === CHOIX.PIERRE && co === CHOIX.CISEAUX) || 
+        (cj === CHOIX.FEUILLE && co === CHOIX.PIERRE) || 
+        (cj === CHOIX.CISEAUX && co === CHOIX.FEUILLE)) {
+        return 'win';
     } else if (cj === co) {
-        return 2; // Égalité
+        return 'draw';
     } else {
-        return 1; // Ordinateur gagne
+        return 'lose';
     }
 }
