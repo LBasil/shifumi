@@ -1,62 +1,37 @@
 body {
-    background: linear-gradient(135deg, #1f1f1f, #343a40);
+    background-color: #282c34;
     color: white;
+    font-family: 'Arial', sans-serif;
 }
 
-h1.glitch {
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 3px;
-    color: #f39c12;
-    position: relative;
+.title {
+    font-size: 2.5rem;
+    color: #61dafb;
 }
 
-#scoreboard {
-    animation: fadeIn 1.5s ease-out;
+#choix-joueur, #resultat, .scoreboard {
+    margin: 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.choix {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
-button.choix {
-    font-size: 1.3rem;
-    animation: pulse 2s infinite;
-}
-
-button.choix:hover {
-    background-color: #f39c12;
-    color: black;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+#choix-joueur-img, #choix-ordi {
+    font-size: 4rem;
 }
 
 #verdict {
-    font-weight: bold;
-    font-size: 2rem;
-    transition: color 0.5s;
+    font-size: 1.5rem;
 }
 
-span.win {
-    color: #28a745;
-    animation: zoomIn 0.5s;
+#message-special {
+    font-size: 1.8rem;
+    color: #e74c3c;
 }
 
-span.lose {
-    color: #dc3545;
-    animation: zoomIn 0.5s;
-}
-
-span.draw {
-    color: #ffc107;
-    animation: zoomIn 0.5s;
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.5); }
-    to { transform: scale(1); }
+.modal {
+    color: black;
 }
