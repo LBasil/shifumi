@@ -9,6 +9,10 @@ const messageSpecial = document.getElementById('message-special');
 let scoreJ = 0;
 let scoreO = 0;
 let winStreak = 0;
+const meilleureSerieElem = document.getElementById('meilleure-serie');
+let meilleureSerie = 0;
+try { meilleureSerie = parseInt(localStorage.getItem('shifumi-meilleure-serie'), 10) || 0; } catch (e) { /* stockage indisponible */ }
+meilleureSerieElem.textContent = meilleureSerie;
 
 const CHOIX = {
     PIERRE: '🪨',
@@ -19,7 +23,7 @@ const CHOIX = {
 // Fonction pour jouer le son
 function playSound(soundId) {
     const sound = document.getElementById(soundId);
-    sound.play();
+    if (sound) sound.play().catch(() => {});
 }
 
 // Déterminer le vainqueur
@@ -66,6 +70,12 @@ choixJoueur.forEach(choix => {
         // Mise à jour des scores
         scoreJoueur.textContent = scoreJ;
         scoreOrdi.textContent = scoreO;
+
+        if (winStreak > meilleureSerie) {
+            meilleureSerie = winStreak;
+            meilleureSerieElem.textContent = meilleureSerie;
+            try { localStorage.setItem('shifumi-meilleure-serie', meilleureSerie); } catch (e) { /* ignoré */ }
+        }
 
         // Activer le message spécial après une série de victoires
         if (winStreak >= 3) {

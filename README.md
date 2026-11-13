@@ -2,7 +2,7 @@
 
 Pierre-feuille-ciseaux contre l'ordinateur, en HTML, CSS et JavaScript (Bootstrap 5). Pas de build.
 
-Le premier à 5 points gagne. Trois victoires d'affilée activent un "mode Ultra" avec quelques effets visuels en plus. Les règles s'affichent dans une fenêtre modale.
+On clique sur un choix, l'ordinateur tire au hasard, et les deux scores s'incrémentent. Trois victoires d'affilée affichent un message de série, et la meilleure série est conservée dans le navigateur (`localStorage`). Les règles s'ouvrent dans une fenêtre modale.
 
 ## Lancer
 
