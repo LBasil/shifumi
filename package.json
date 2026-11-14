@@ -1,0 +1,9 @@
+{
+  "name": "shifumi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pierre-feuille-ciseaux contre l'ordinateur, avec série de victoires.",
+  "engines": {
+    "node": "26.x"
+  }
+}
